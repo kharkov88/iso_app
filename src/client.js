@@ -4,7 +4,7 @@ import { browserHistory, Router } from 'react-router';
 import App        from 'components/App';
 import routes     from './routes'
 
-if('serviceWorker' in navigator && process.env.NODE_ENV === 'production'){
+if('serviceWorker34' in navigator){
     navigator.serviceWorker.register('/sw.js',{ scope: '/' })
     .then(reg=>{
         if(reg.installing){
