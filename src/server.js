@@ -5,13 +5,14 @@ import App      from 'components/App';
 
 const app = express();
 
-app.use((req, res) => {
+app.use(express.static( __dirname + '/'));
+app.get('/',(req, res) => {
   const componentHTML = ReactDOMServer.renderToStaticMarkup(<App />);
 
   return res.end(renderHTML(componentHTML));
 });
 
-const assetUrl = process.env.NODE_ENV !== 'production' ? 'http://localhost:8050' : '/';
+const assetUrl = process.env.NODE_ENV !== 'production' ? 'http://localhost:8050' : 'http://localhost:3001';
 
 function renderHTML(componentHTML) {
   return `

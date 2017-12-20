@@ -4,6 +4,23 @@ import { browserHistory, Router } from 'react-router';
 import App        from 'components/App';
 import routes     from './routes'
 
+if('serviceWorker' in navigator && process.env.NODE_ENV === 'production'){
+    navigator.serviceWorker.register('/sw.js',{ scope: '/' })
+    .then(reg=>{
+        if(reg.installing){
+            console.log('servWorker installing')
+        }else if(reg.waiting){
+            console.log('servWorker insalled')
+        }else if(reg.active){
+            console.log('servWorker active')
+        }
+    })
+    .catch(function(error) {
+        // registration failed
+        console.log('Registration failed with ' + error);
+      });
+}
+
 const component = (
   <Router history={browserHistory}>
     {routes}
