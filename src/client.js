@@ -2,7 +2,7 @@ import React      from 'react';
 import ReactDOM   from 'react-dom';
 import { browserHistory, Router } from 'react-router';
 import App        from 'components/App';
-import routes     from './routes'
+import routes     from './routes';
 
 if('serviceWorker34' in navigator){
     navigator.serviceWorker.register('/sw.js',{ scope: '/' })

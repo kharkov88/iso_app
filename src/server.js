@@ -44,8 +44,11 @@ function renderHTML(componentHTML) {
           <link rel="stylesheet" href="${assetUrl}/public/assets/styles.css">
       </head>
       <body>
+
         <div id="react-view">${componentHTML}</div>
-        <script type="application/javascript" src="${assetUrl}/public/assets/bundle.js"></script>
+        <script async ype="application/javascript" src="${assetUrl}/public/assets/bundle.js"></script>
+        <script type="application/javascript" src="${assetUrl}/public/assets/device.js"></script>
+        <script type="application/javascript" src="${assetUrl}/public/assets/loader.js"></script>
       </body>
     </html>
   `;
